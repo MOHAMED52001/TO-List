@@ -1,7 +1,7 @@
 <?php
-    session_start();
-    include('../core/functions.php'); 
-    include('../core/validation.php');
+session_start();
+include('../core/functions.php');
+include('../core/validation.php');
 $err = [];
 if (post_requestMethod($_SERVER['REQUEST_METHOD'])) {
 
@@ -77,13 +77,9 @@ if (post_requestMethod($_SERVER['REQUEST_METHOD'])) {
         header('Location:../login.php');
         die;
     }
-
-
-
-
-
-
 } else {
+    $err[] = 'Unsported REQUEST_METHOD';
+    $_SESSION['error'] = $err;
     header('Location:../signup.php');
     die;
 }

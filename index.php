@@ -39,7 +39,7 @@
     <div class="signup">
         <div class="signup-content">
             <i class="fa-solid fa-handshake"></i>
-            <p class="p-lead">Or Signup And Start Your Journy of Success</p>
+            <p class="p-lead">Signup And Start Your Journy of Success</p>
             <button><a href="./signup.php">SignUp</a></button>
         </div>
     </div>
