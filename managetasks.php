@@ -54,3 +54,5 @@ foreach ($old_tasks as $key => $value) {
     </div>
     <?php endforeach; ?>
 </div>
+
+<?php include('./inc/footer.php'); ?>

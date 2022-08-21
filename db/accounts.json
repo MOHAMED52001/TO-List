@@ -2,25 +2,44 @@
     {
         "id": "Mo63001fc87a952",
         "name": "Mohamed Atef",
+        "img": ".\/uploads\/corinne-kutz-eeqFjT6q_sQ-unsplash.jpg",
         "email": "mohamedatef@gmail.com",
-        "password": "1234@$"
+        "job": "FullStack Developer",
+        "major": "Computer Science",
+        "password": "1234@$",
+        "facebook": "https:\/\/www.facebook.com\/mohamedatef542",
+        "instagram": "",
+        "linkedin": "",
+        "twitter": "",
+        "github": ""
     },
     {
         "id": "Ba630031c5c8bae",
         "name": "Barakat",
+        "img": ".\/uploads\/corinne-kutz-eeqFjT6q_sQ-unsplash.jpg",
         "email": "Barakat@gmail.com",
-        "password": "1234"
+        "job": "FullStack Developer",
+        "major": "Computer Science",
+        "password": "1234",
+        "facebook": "",
+        "instagram": "",
+        "linkedin": "",
+        "twitter": "",
+        "github": ""
+
     },
     {
-        "id": "Wo6300324a2a7ff",
-        "name": "Woody",
-        "email": "Woody@gmail.com",
-        "password": "asdf"
-    },
-    {
-        "id": "Ha63003a6306333",
-        "name": "Hassona",
-        "email": "Hassona@gmail.com",
-        "password": "1234"
+        "id": "Mo6302b07969744",
+        "name": "Mohamed Nasser",
+        "img": ".\/uploads\/walling-XLqiL-rz4V8-unsplash.jpg",
+        "email": "mohamednasser@gmail.com",
+        "job": "Flutter Developer",
+        "major": "CS",
+        "password": "12345",
+        "facebook": "",
+        "instagram": "",
+        "linkedin": "",
+        "twitter": "",
+        "github": ""
     }
 ]

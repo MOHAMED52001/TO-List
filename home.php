@@ -2,7 +2,6 @@
 <?php include('./inc/nav.php'); ?>
 <?php include('./core/functions.php'); ?>
 
-<h1 style="color:#41adff; text-align:center">Tasks</h1>
 <?php
 $per_Tasks = [];
 $file = './db/tasks.json';
@@ -16,6 +15,9 @@ foreach ($old_tasks as $key => $value) {
     }
 }
 ?>
+<h1 style="color:#41adff; text-align:center">Welcome <?= $_SESSION['account']['name'] ?></h1>
+<div>
+<h2 style="color:#41adff; margin-bottom:0 ;text-align:left;">Tasks</h2>
 <table>
     <th>
         <tr>
@@ -36,7 +38,7 @@ foreach ($old_tasks as $key => $value) {
     endforeach; ?>
         </tbody>
 </table>
-
+</div>
 <br>
 <section>
     <div class="serv-content">

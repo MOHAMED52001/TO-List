@@ -1,5 +1,6 @@
 <?php
 
+    
     function post_requestMethod($method) {
         if($method == 'POST') return true;
         else{
@@ -37,6 +38,17 @@
         return $err;
     }
 
+    function getTasks($userkey){
+        $userTasks = [];
+        $tasks = getJsonData('./db/tasks.json');
+        foreach($tasks as $key => $task) {
+            if($key == $userkey){
+                $userTasks = $task;
+                break;
+            }
+        }
+        return $userTasks;
+    }
 
 
 
