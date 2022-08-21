@@ -43,7 +43,7 @@ foreach ($old_tasks as $key => $value) {
                 </label>
                 <div>
                     <span><a href="./edit.php?id=<?= $key ?>&name=<?= $tasks['Task Name'] ?>&des=<?= $tasks['Task Description'] ?>">Edit</a></span>
-                    <span><a href="./handeler/removetask_handeler.php?task_id=<?= $key?>">Remove</a></span>
+                    <span><a style="color: red; font-weight: lighter;" href="./handeler/removetask_handeler.php?task_id=<?= $key?>">Remove</a></span>
             </div>
         </div>
         <div>
