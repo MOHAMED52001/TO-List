@@ -8,6 +8,17 @@ if(!isset($_SESSION['auth'])){
     die;
 }
 ?>
-<h1 style="color:#41adff; text-align:center">Login</h1>
+<h1 style="color:#41adff; text-align:center">Wait For Implementation</h1>
+
+
+
+
+
+
+
+
+
+
+
 
 <?php include('./inc/footer.php'); ?>

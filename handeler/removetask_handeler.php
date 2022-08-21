@@ -29,7 +29,7 @@ if (!file_put_contents($file, json_encode($all_tasks, JSON_PRETTY_PRINT), LOCK_E
 } else {
     //redirect to Home page.
     $_SESSION['tasks'] = $data_to_save;
-    header('Location:../home.php');
+    header('Location:../managetasks.php');
     die;
 }
 
