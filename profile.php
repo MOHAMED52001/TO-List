@@ -9,3 +9,5 @@ if(!isset($_SESSION['auth'])){
 }
 ?>
 <h1 style="color:#41adff; text-align:center">Login</h1>
+
+<?php include('./inc/footer.php'); ?>

@@ -8,7 +8,7 @@ if(!isset($_SESSION['auth'])){
     die;
 }
 ?>
-<h1 style="color:#41adff; text-align:center">ToDo List Guide</h1>
+<h1 style="color:#41adff; margin-top: 0;margin-bottom: 1rem;text-align:center">ToDo List Guide</h1>
 
 <section id="list-lay">
     <div class="guide-sec">
@@ -31,16 +31,22 @@ if(!isset($_SESSION['auth'])){
         <div class="pad-150">
         <h3 class="h3-l">What You Can Achieve Using This App</h3>
            <form action="./addtask.php">
-                <button>Create</button>
+            <p>You Can Create And Add Your Tasks</p>
+                <button>Create Task</button>
+           </form>
+           <form action="./home.php">
+            <p>You Can View Your Tasks</p>
+                <button>Tasks</button>
+           </form>
+           <form action="./managetasks.php">
+            <p>You Can Edit And Update Your Tasks</p>
+                <button>Edit</button>
+           </form><form action="./managetasks.php">
+            <p>You Can Remove Any Task You Want</p>
+                <button>Remove</button>
            </form>
         </div>
         </div>
     </div>
 </section>
-
-
-
-
-
-
 <?php include('./inc/footer.php'); ?>

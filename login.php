@@ -1,7 +1,13 @@
 <?php include('./inc/header.php');?>
 <?php include('./inc/nav.php'); ?>
 <h1 style="color:#41adff; text-align:center">Login</h1>
+
+
 <?php
+if(isset($_SESSION['auth'])){
+    header('Location:./home.php');
+    die;
+}
    if (!empty($_SESSION['error'])) {
     $err = $_SESSION['error'];
    

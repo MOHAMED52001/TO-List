@@ -1,0 +1,55 @@
+.task-item {
+    display: none;
+}
+
+.tasks-wrapper {
+    padding: 30px 0;
+    flex: 1;
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 8px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 16px;
+    padding-left: 30px;
+    color: var(--task-color);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.task:hover {
+    transform: translatex(2px);
+}
+
+.task label {
+    cursor: pointer;
+}
+
+label .label-text {
+    position: relative;
+}
+
+label .label-text:before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    left: -24px;
+    transition: 0.2s ease;
+}
+
+.task-item:checked+label .label-text:before {
+    background-color: #009e90;
+    border: none;
+    background-image: url("../svg/check.svg");
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    border: 1px solid #009e90;
+}

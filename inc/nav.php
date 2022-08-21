@@ -18,7 +18,7 @@
                 }    
                 ?>>Home</a></li>
                 <?php if(isset($_SESSION['auth'])) : ?>
-                <li><a href="./list.php">List</a></li>
+                <li><a href="./list.php">Guide</a></li>
                 <li><a href="./profile.php">Profile</a></li>
                 <li><a href="./logout.php">Logout</a></li>
                 <?php endif?>
