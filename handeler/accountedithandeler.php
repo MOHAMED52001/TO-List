@@ -3,12 +3,15 @@ session_start();
 include('../core/functions.php');
 include('../core/validation.php');
 $err = [];
+$Account = $_SESSION['account'];
 if (post_requestMethod($_SERVER['REQUEST_METHOD'])) {
-    //Get the Data from the Form.
+
+    //Get the input Fields.
     foreach ($_POST as $key => $val) {
         $$key = clear_input($val);
     }
-    //validate Job.
+
+    //validate job.
     if (empty_val($job)) {
         $err[] = 'Job is required. If you dont have a job type "Looking For Job" please';
     }
@@ -28,22 +31,7 @@ if (post_requestMethod($_SERVER['REQUEST_METHOD'])) {
     } elseif (!emailValidate($email)) {
         $err[] = 'Invalid Email Address';
     }
-    //Validate Password.
-    if (max_len($password)) {
-        $err[] = 'password must be at most 20 characters long';
-    } elseif (min_len($password)) {
-        $err[] = 'password must be at least 3 characters long';
-    } elseif ($password != $password1) {
-        $err[] = 'passwords not correct';
-    }
-    //If there is errors repeat the signup process again.
-    if (!empty($err)) {
-        $_SESSION['error'] = $err;
-        header('Location:../signup.php');
-        die;
-    }
-    //Save The Created Account Data.
-    //check if there is img uploaded.
+    //validate image
     $allowed_ext = array('png', 'jpg', 'jpeg');
     // Check if file was uploaded
     if (!empty($_FILES['img']['name'])) {
@@ -56,25 +44,26 @@ if (post_requestMethod($_SERVER['REQUEST_METHOD'])) {
         $file_ext = strtolower(end($file_ext));
         // Validate file type/extension
         if (in_array($file_ext, $allowed_ext)) {
-            // Upload file
             move_uploaded_file($file_tmp, $target_dir);
         } else {
             $err[] = 'Invalid IMG Format.';
         }
     }
-    $ID = generate_ID(substr($name, 0, 2));
+    //IF there is errors redirect to the create page.
+    if (!empty($err)) {
+        $_SESSION['error'] = $err;
+        header('Location:../Accountedit.php');
+        die;
+    }
+
+    //Setup The Account New Data.
     if (empty($_FILES['img']['name'])) {
         $img_name = "./img/personaluser.png";
     } else {
         $img = $_FILES['img']['name'];
         $img_name = "./uploads/$img";
     }
-   $facebook = $facebook ?? "#";
-   $instagram = $instagram ?? "#";
-   $linkedin = $linkedin ?? "#";
-   $twitter = $twitter ?? "#";
-   $github = $github ?? "#";
- 
+    $ID = $id;
     $new_account = [
         "id" => $ID,
         "name" => $name,
@@ -82,47 +71,45 @@ if (post_requestMethod($_SERVER['REQUEST_METHOD'])) {
         "email" => $email,
         "job" => $job,
         "major" => $major,
-        "password" => $password,
+        "password" => $Account['password'],
         "facebook" => $facebook,
         "instagram" => $instagram,
         "linkedin" => $linkedin,
-        "twitter" =>  $twitter,     
-        "github" =>  $github     
+        "twitter" =>  $twitter,
+        "github" =>  $github
     ];
 
-    //Insert the account into database.
     $file = '../db/accounts.json';
-    $old_accounts = getJsonData($file);
-    if (filesize($file) == 0) {
-        $firstAccount = array($new_account);
-        $data_to_save = $firstAccount;
-    } else {
-        //this will return array of errors if the account information is exists.
-        $err = check_Accont_Exists($old_accounts, $new_account['name'], $new_account['email']);
-        if (!empty($err)) {
-            $_SESSION['error'] = $err;
-            header('Location:../signup.php');
-            die;
-        } else {
-
-            array_push($old_accounts, $new_account);
-            $data_to_save = $old_accounts;
+    $accounts = getJsonData($file);
+    foreach ($accounts as $key => $account) {
+        if($account['email'] == $Account['email']){
+            $accounts[$key] = $new_account;
+            break;
         }
-    }
+    }   
 
-    if (!file_put_contents($file, json_encode($data_to_save, JSON_PRETTY_PRINT), LOCK_EX)) {
-        $err[] = 'Error saving account';
+    if (!file_put_contents($file, json_encode($accounts, JSON_PRETTY_PRINT), LOCK_EX)) {
+        $err[] = 'Error saving tasks';
         $_SESSION['error'] = $err;
-        header('Location:../signup.php');
+        header('Location:../Accountedit.php');
         die;
     } else {
-        //redirect to login page.
-        header('Location:../login.php');
+        //redirect to Home page.
+        $_SESSION['account'] = $new_account;
+        header('Location:../profile.php');
         die;
     }
-} else {
+
+
+
+
+
+
+    
+}
+else {
     $err[] = 'Unsported REQUEST_METHOD';
     $_SESSION['error'] = $err;
-    header('Location:../signup.php');
+    header('Location:../profile.php');
     die;
 }

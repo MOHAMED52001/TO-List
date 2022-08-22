@@ -76,28 +76,6 @@ if (post_requestMethod($_SERVER['REQUEST_METHOD'])) {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 } 
 else {
     $err[] = 'Unsported REQUEST_METHOD';
