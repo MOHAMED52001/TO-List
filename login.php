@@ -27,7 +27,6 @@ if(isset($_SESSION['auth'])){
  unset($_SESSION['error']);
  ?>
     <div class="form-wrap flex-item">
-
         <div>
             <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="Enter Your Email" autocomplete="off">
@@ -37,6 +36,9 @@ if(isset($_SESSION['auth'])){
             <input type="password" name="password" id="password" placeholder="Enter Your Password" autocomplete="off">
         </div>
     </div>
+    <label>
+        <input type="checkbox" name="rememberMe"> Remember Me
+    </label>
     <button>LogIn</button>
 </form>
 <?php include('./inc/footer.php'); ?>

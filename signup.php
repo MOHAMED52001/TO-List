@@ -26,12 +26,8 @@ if (!empty($_SESSION['error'])) {
     ?>
     <div class="form-wrap flex-item">
         <div>
-            <label for="img">Upload Image</label>
-            <input type="file" name="img" id="img" style="cursor: pointer;">
-        </div>
-        <div>
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" autocomplete="off">
+            <input type="text" name="name" id="name"  autocomplete="off">
         </div>
         <div>
             <label for="job">Job</label>
@@ -52,6 +48,10 @@ if (!empty($_SESSION['error'])) {
         <div>
             <label for="password1">Confirm Password</label>
             <input type="password" name="password1" id="password1" autocompletename" id="name" autocomplete="off">
+        </div>
+        <div>
+            <label for="img">Upload Image</label>
+            <input  type="file" name="img" id="img" style="cursor: pointer;">
         </div>
         <div>
             <label for="">MEDIA LINKS</label>

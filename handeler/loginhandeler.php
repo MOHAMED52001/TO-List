@@ -8,7 +8,8 @@ if (get_requestMethod($_SERVER['REQUEST_METHOD'])) {
     foreach ($_GET as $key => $value) {
         $$key = clear_input($value);
     }
-
+    print_r($_GET);
+die;
     if (empty($email)) {
         $err[] = 'Email address required';
     }
