@@ -15,7 +15,7 @@ if (get_requestMethod($_SERVER['REQUEST_METHOD'])) {
     if (empty($password)) {
         $err[] = 'Password required';
     }
-
+    
     if (!empty($err)) {
         $_SESSION['error'] = $err;
         header('Location:../login.php');
