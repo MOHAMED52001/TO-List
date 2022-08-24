@@ -40,5 +40,19 @@
         "linkedin": "",
         "twitter": "",
         "github": ""
+    },
+    {
+        "id": "Mo6306721e28200",
+        "name": "Mohamed Amr",
+        "img": ".\/uploads\/c08b48cd-3e48-4820-8a6e-0f31f8ba8dd3.jpg",
+        "email": "mohamedamr@gmail.com",
+        "job": "Software Developer",
+        "major": "CS",
+        "password": "12345",
+        "facebook": "https:\/\/www.facebook.com\/devmohamedamr\/about",
+        "instagram": "",
+        "linkedin": "",
+        "twitter": "",
+        "github": "https:\/\/github.com\/devmohamedamr"
     }
 ]
